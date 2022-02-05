@@ -1,4 +1,4 @@
-# X.509 Certificate 
+# SSL chain of trust - Certificate validation
 
 ## Theory
 The main reason https is implemented is, because in http every information is exchanged in clear text, which makes it vulnerable. <br />
