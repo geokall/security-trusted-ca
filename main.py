@@ -39,20 +39,23 @@ def get_chain_from_certificate(hostname, port=443):
 
 
 if __name__ == '__main__':
-    url = 'untrusted-root.badssl.com'
+    url = 'www.e-food.gr'
     chain_certificate = get_chain_from_certificate(url)
+
     entity_certificate = chain_certificate[0]
 
     last = chain_certificate[-1]
 
     trusted_ca = last.get('issuer')
 
-    os_root_trusted_ca = open('/etc/pki/tls/certs/ca-bundle.trust.crt', 'rt').read()
+    os_root_trusted_ca = open(certifi.where(), 'rt').read()
+
     print('URL: {}'.format(url))
     pprint("Certificate chain: {}".format(chain_certificate))
+
     if os_root_trusted_ca.find(trusted_ca) != -1:
-        print("Root CA: {}".format(trusted_ca))
-        print("Entity Certificate: {}".format(entity_certificate.get('issuer')))
+        print("Root CA Issuer: {}".format(trusted_ca))
+        print("Entity Certificate Issuer: {}".format(entity_certificate.get('issuer')))
         print("Certificate started being valid on: {}".format(entity_certificate.get('notBefore')))
         print("Certificate stops being valid on: {}".format(entity_certificate.get('notAfter')))
         print("Certificate is expired: {}".format(entity_certificate.get('hasExpired')))
