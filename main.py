@@ -1,25 +1,9 @@
 import socket
 from datetime import datetime
+from pprint import pprint
 
 from OpenSSL import SSL
 import certifi
-
-
-# def get_pem_certificate(host, port=443, timeout=5):
-#     context = ssl.create_default_context()
-#     connection = socket.create_connection((host, port))
-#     sock = context.wrap_socket(connection, server_hostname=host)
-#     sock.settimeout(timeout)
-#
-#     try:
-#         der_cert = sock.getpeercert(True)
-#     except Exception as e:
-#         print(e)
-#         return False
-#     finally:
-#         sock.close()
-#
-#     return ssl.DER_cert_to_PEM_cert(der_cert)
 
 
 def get_chain_from_certificate(hostname, port=443):
@@ -55,7 +39,8 @@ def get_chain_from_certificate(hostname, port=443):
 
 
 if __name__ == '__main__':
-    chain_certificate = get_chain_from_certificate('e-food.gr')
+    url = 'untrusted-root.badssl.com'
+    chain_certificate = get_chain_from_certificate(url)
     entity_certificate = chain_certificate[0]
 
     last = chain_certificate[-1]
@@ -63,8 +48,8 @@ if __name__ == '__main__':
     trusted_ca = last.get('issuer')
 
     os_root_trusted_ca = open('/etc/pki/tls/certs/ca-bundle.trust.crt', 'rt').read()
-
-    print("Certificate chain: {}".format(chain_certificate))
+    print('URL: {}'.format(url))
+    pprint("Certificate chain: {}".format(chain_certificate))
     if os_root_trusted_ca.find(trusted_ca) != -1:
         print("Root CA: {}".format(trusted_ca))
         print("Entity Certificate: {}".format(entity_certificate.get('issuer')))
@@ -75,6 +60,7 @@ if __name__ == '__main__':
     else:
         print('Certificate does not exist in Trusted CA')
         print('Certificate is invalid')
+        print('Certificate is expired: {}'.format(entity_certificate.get('hasExpired')))
 
     # sudo
     # awk - v
@@ -82,4 +68,3 @@ if __name__ == '__main__':
     # / BEGIN / {close(cmd)};
     # {print | cmd}
     # ' < /etc/pki/tls/certs/ca-bundle.trust.crt
-
