@@ -78,6 +78,20 @@ os_root_trusted_ca = open(certifi.where(), 'rt').read()
 ```
 Apart from that, the date where the certificate stops being valid is printed in the result output.
 
+```python
+if os_root_trusted_ca.find(trusted_ca) != -1:
+    print("Root CA Issuer: {}".format(trusted_ca))
+    print("Entity Certificate Issuer: {}".format(entity_certificate.get('issuer')))
+    print("Certificate started being valid on: {}".format(entity_certificate.get('notBefore')))
+    print("Certificate stops being valid on: {}".format(entity_certificate.get('notAfter')))
+    print("Certificate is expired: {}".format(entity_certificate.get('hasExpired')))
+    print('Certificate is valid.')
+else:
+    print('Certificate does not exist in Trusted CA')
+    print('Certificate is invalid')
+    print('Certificate is expired: {}'.format(entity_certificate.get('hasExpired')))
+```
+
 Example of a valid certificate from 'www.e-food.gr'
 ![Screenshot](images/valid_certificate.png)
 
