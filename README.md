@@ -3,12 +3,12 @@
 ## HTTPS
 
 Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for
-secure communication over a computer network, and is widely used on the Internet.[2][3]
+secure communication over a computer network, and is widely used on the Internet.
 In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets
-Layer (SSL). The protocol is therefore also referred to as HTTP over TLS,[4] or HTTP over SSL. The principal motivations
+Layer (SSL). The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL. The principal motivations
 for HTTPS are authentication of the accessed website, and protection of the privacy and integrity of the exchanged data
 while in transit. It protects against man-in-the-middle attacks, and the bidirectional encryption of communications
-between a client and server protects the communications against eavesdropping and tampering.[5][6] The authentication
+between a client and server protects the communications against eavesdropping and tampering. The authentication
 aspect of HTTPS requires a trusted third party to sign server-side digital certificates.
 
 ## TLS
@@ -23,7 +23,7 @@ although it can also be implemented on UDP, DHCP and SCTP as well (e.g. for VPN 
 ## X.509 Certificate
 
 An X.509 certificate is a digital certificate based on the widely accepted International Telecommunications Union (ITU)
-X.509 standard, which defines the format of public key infrastructure (PKI) certificates. They are used to manage
+X.509 standard, which defines the format of public key infrastructure (PKI) certificates. They are used to managing
 identity and security in internet communications and computer networking. They are unobtrusive and ubiquitous, and we
 encounter them every day when using websites, mobile apps, online documents, and connected devices.
 
