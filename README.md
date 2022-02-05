@@ -39,6 +39,8 @@ Based on [Root certificate](https://en.wikipedia.org/wiki/Root_certificate) in o
 url <br />
 we need to verify X509 Certificate chain of trust.
 
+![Screenshot](images/chain_of_trust.png)
+
 ## Design - Implementation
 
 The first step is to retrieve X509 instances (SSL chain of trust). To do that, an SSL context is initialized. In this
