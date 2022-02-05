@@ -64,10 +64,3 @@ if __name__ == '__main__':
         print('Certificate does not exist in Trusted CA')
         print('Certificate is invalid')
         print('Certificate is expired: {}'.format(entity_certificate.get('hasExpired')))
-
-    # sudo
-    # awk - v
-    # cmd = 'openssl x509 -noout -subject' '
-    # / BEGIN / {close(cmd)};
-    # {print | cmd}
-    # ' < /etc/pki/tls/certs/ca-bundle.trust.crt
