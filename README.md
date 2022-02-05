@@ -58,6 +58,7 @@ conn.get_peer_cert_chain()
 Above function fetches the instances. The first element is the url's certificate and the last element the root
 ca. <br />
 In the next step, an object with all the attributes is created and appended in a list. <br />
+
 For the subject, keeping only the 'O'(organization) and for the issuer the 'CN' (common name). <br />
 Another useful attribute is the 'hasExpired', which provides us the information if the certificate is expired.
 <br />
