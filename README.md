@@ -16,8 +16,9 @@ aspect of HTTPS requires a trusted third party to sign server-side digital certi
 
 Transport Layer Security (TLS) encrypts data sent over the Internet to ensure that eavesdroppers and hackers are unable
 to see what you transmit which is particularly useful for private and sensitive information such as passwords, credit
-card numbers, <br />
-and personal correspondence. TLS is normally implemented on top of TCP in order to encrypt Application Layer protocols
+card numbers, and personal correspondence.
+
+TLS is normally implemented on top of TCP in order to encrypt Application Layer protocols
 such as HTTP, FTP, SMTP and IMAP, <br />
 although it can also be implemented on UDP, DHCP and SCTP as well (e.g. for VPN and SIP-based application uses).
 
