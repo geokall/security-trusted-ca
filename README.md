@@ -31,6 +31,7 @@ Another useful attribute is the 'hasExpired', which provides us the information 
 <br />
 The final step is to read the trusted CA. If the url's root CA does exist in the list of CA certificates, <br />
 then the certificate is valid. <br />
+Apart from that, the date where the certificate stops being valid is printed in the result output.
 
 Example of a valid certificate from 'www.e-food.gr'
 ![Screenshot](images/valid_certificate.png)
