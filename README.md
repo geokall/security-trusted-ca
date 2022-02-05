@@ -46,7 +46,7 @@ context <br />
 is loaded the ca-bundle.crt, using the ```certifi.where()``` method. <br />
 
 ```python
-    context.load_verify_locations(cafile=certifi.where())
+context.load_verify_locations(cafile=certifi.where())
 ```
 
 ```python
@@ -60,19 +60,22 @@ For the subject, keeping only the 'O'(organization) and for the issuer the 'CN' 
 Another useful attribute is the 'hasExpired', which provides us the information if the certificate is expired.
 <br />
 ```python
-        certificate_info = {
-            'subject': cert.get_subject().O,
-            'issuer': cert.get_issuer().CN,
-            'serialNumber': cert.get_serial_number(),
-            'version': cert.get_version(),
-            'notBefore': datetime.strptime(cert.get_notBefore().decode('ascii'), '%Y%m%d%H%M%SZ'),
-            'notAfter': datetime.strptime(cert.get_notAfter().decode('ascii'), '%Y%m%d%H%M%SZ'),
-            'signature': cert.get_signature_algorithm(),
-            'hasExpired': cert.has_expired()
-        }
+certificate_info = {
+    'subject': cert.get_subject().O,
+    'issuer': cert.get_issuer().CN,
+    'serialNumber': cert.get_serial_number(),
+    'version': cert.get_version(),
+    'notBefore': datetime.strptime(cert.get_notBefore().decode('ascii'), '%Y%m%d%H%M%SZ'),
+    'notAfter': datetime.strptime(cert.get_notAfter().decode('ascii'), '%Y%m%d%H%M%SZ'),
+    'signature': cert.get_signature_algorithm(),
+    'hasExpired': cert.has_expired()
+}
 ```
 The final step is to read the trusted CA. If the url's root CA does exist in the list of CA certificates, <br />
 then the certificate is valid. <br />
+```python
+os_root_trusted_ca = open(certifi.where(), 'rt').read()
+```
 Apart from that, the date where the certificate stops being valid is printed in the result output.
 
 Example of a valid certificate from 'www.e-food.gr'
