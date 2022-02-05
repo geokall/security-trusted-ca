@@ -1,10 +1,5 @@
 # SSL chain of trust - Certificate validation
 
-## Theory
-The main reason https is implemented is, because in http every information is exchanged in clear text, which makes it vulnerable. <br />
-This is not a problem if the webpage does not share any useful information like credit cards.
-In case a webpage, shares useful information, https is been used.
-
 ## HTTPS
 Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for secure communication over a computer network, and is widely used on the Internet.[2][3]
 In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).
@@ -17,6 +12,11 @@ to see what you transmit which is particularly useful for private and sensitive 
 and personal correspondence.
 TLS is normally implemented on top of TCP in order to encrypt Application Layer protocols such as HTTP, FTP, SMTP and IMAP, <br />
 although it can also be implemented on UDP, DHCP and SCTP as well (e.g. for VPN and SIP-based application uses).
+
+## X.509 Certificate
+An X.509 certificate is a digital certificate based on the widely accepted International Telecommunications Union (ITU) X.509 standard, which defines the format of public key infrastructure (PKI) certificates.
+They are used to manage identity and security in internet communications and computer networking.
+They are unobtrusive and ubiquitous, and we encounter them every day when using websites, mobile apps, online documents, and connected devices.
 
 ## CA
 A Certificate Authority (CA) is an entity that issues digital certificates conforming to the ITU-T’s X.509 standard <br />
