@@ -5,10 +5,18 @@ The main reason https is implemented is, because in http every information is ex
 This is not a problem if the webpage does not share any useful information like credit cards.
 In case a webpage, shares useful information, https is been used.
 
+## HTTPS
+Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It is used for secure communication over a computer network, and is widely used on the Internet.[2][3]
+In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).
+The protocol is therefore also referred to as HTTP over TLS,[4] or HTTP over SSL.
+The principal motivations for HTTPS are authentication of the accessed website, and protection of the privacy and integrity of the exchanged data while in transit. It protects against man-in-the-middle attacks, and the bidirectional encryption of communications between a client and server protects the communications against eavesdropping and tampering.[5][6] The authentication aspect of HTTPS requires a trusted third party to sign server-side digital certificates.
+
 ## TLS
 Transport Layer Security (TLS) encrypts data sent over the Internet to ensure that eavesdroppers and hackers are unable
 to see what you transmit which is particularly useful for private and sensitive information such as passwords, credit card numbers, <br/ >
 and personal correspondence.
+TLS is normally implemented on top of TCP in order to encrypt Application Layer protocols such as HTTP, FTP, SMTP and IMAP, <br />
+although it can also be implemented on UDP, DHCP and SCTP as well (e.g. for VPN and SIP-based application uses).
 
 ## CA
 A Certificate Authority (CA) is an entity that issues digital certificates conforming to the ITU-T’s X.509 standard <br />
