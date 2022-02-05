@@ -6,7 +6,7 @@ This is not a problem if the webpage does not share any useful information like 
 In case a webpage, shares useful information, https is been used.
 
 ## TLS
-Transport Layer Security (TLS) encrypts data sent over the Internet to ensure that eavesdroppers and hackers are unable <br />
+Transport Layer Security (TLS) encrypts data sent over the Internet to ensure that eavesdroppers and hackers are unable
 to see what you transmit which is particularly useful for private and sensitive information such as passwords, credit card numbers, <br/ >
 and personal correspondence.
 
