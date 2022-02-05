@@ -1,8 +1,8 @@
 # X.509 Certificate 
 
 ## Theory
-The main reason https is implemented is, because in http every information is exchanged in clear text, which makes it <br />
-vulnerable. This is not a problem if the webpage does not share any useful information like credit cards.
+The main reason https is implemented is, because in http every information is exchanged in clear text, which makes it vulnerable. <br />
+This is not a problem if the webpage does not share any useful information like credit cards.
 In case a webpage, shares useful information, https is been used.
 
 ## TLS
@@ -20,21 +20,23 @@ we need to verify X509 Certificate chain of trust.
 
 ## Design - Implementation
 The first step is to retrieve X509 instances (SSL chain of trust). To do that, an SSL context is initialized. In this context <br />
-is loaded the ca-bundle.crt, using the ```certifi.where()``` method. < br />
+is loaded the ca-bundle.crt, using the ```certifi.where()``` method. <br />
 ```python
 conn.get_peer_cert_chain()
 ```
-get_peer_cert_chain() fetches the instances. The first element is the url's certificate and the last element the root ca. <br />
+Above function fetches the instances. The first element is the url's certificate and the last element the root ca. <br />
 In the next step, an object with all the attributes is created and appended in a list. <br />
 For the subject, keeping only the 'O'(organization) and for the issuer the 'CN' (common name). <br />
-Another useful attribute is the 'hasExpired', which provides us the information if the certificate <br />
-is expired.
+Another useful attribute is the 'hasExpired', which provides us the information if the certificate is expired.
 <br />
 The final step is to read the trusted CA. If the url's root CA does exist in the list of CA certificates, <br />
 then the certificate is valid. <br />
 
 Example of a valid certificate from 'www.e-food.gr'
 ![Screenshot](images/valid_certificate.png)
+
+Example of an expired certicate from 'www.expired-badssl.com'
+![Screenshot](images/expired_certificate.png)
 
 
 
